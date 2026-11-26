@@ -1,0 +1,44 @@
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Starting GitHub checkout'
+
+                git branch: 'main',
+                    url: 'https://github.com/laradata375/Jenkins-Zero-To-Hero.git'
+
+                echo 'GitHub checkout successful'
+            }
+        }
+
+        stage('Verify Files') {
+            steps {
+                sh 'dir'
+                echo 'Repository files verified'
+            }
+        }
+
+	stage('Build') {
+		steps {
+        dir('java-maven-sonar-argocd-helm-k8s/spring-boot-app') {
+            sh 'mvn clean package'
+        }
+    }
+}
+
+    }
+
+    post {
+        success {
+            echo 'CI Pipeline completed successfully!'
+        }
+
+        failure {
+            echo 'CI Pipeline failed. Check the console output.'
+        }
+    }
+}

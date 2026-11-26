@@ -45,15 +45,20 @@ Steps:
         Stage 7: Use a testing framework like Selenium to run user acceptance tests on the deployed application.
         Stage 8: Use Argo CD to promote the application to a production environment.
 
+<<<<<<< HEAD
     5. Set up Argo CD:
-        Install Argo CD on the Kubernetes cluster.
-        Set up a Git repository for Argo CD to track the changes in the Helm charts and Kubernetes manifests.
-        Create a Helm chart for the Java application that includes the Kubernetes manifests and Helm values.
-        Add the Helm chart to the Git repository that Argo CD is tracking.
+   - Install Argo CD on the Kubernetes cluster.
+   - Set up a Git repository for Argo CD to track changes in Helm charts and Kubernetes manifests.
+   - Create a Helm chart for the Java application.
+   - Add the Helm chart to the Git repository tracked by Argo CD.
 
-    6. Configure Jenkins pipeline to integrate with Argo CD:
-       6.1 Add the Argo CD API token to Jenkins credentials.
-       6.2 Update the Jenkins pipeline to include the Argo CD deployment stage.
+   6. Configure Jenkins pipeline to integrate with Argo CD:
+   - Add the Argo CD API token to Jenkins credentials.
+   - Update the Jenkins pipeline to include the Argo CD deployment stage.
+
+Testing Jenkins GitHub webhook integration.=======
+Testing Jenkins GitHub webhook integration.
+>>>>>>> 3af51cf (Testing Jenkins webhook)
 
     7. Run the Jenkins pipeline:
        7.1 Trigger the Jenkins pipeline to start the CI/CD process for the Java application.
